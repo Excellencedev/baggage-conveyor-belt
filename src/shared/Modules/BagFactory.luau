@@ -25,6 +25,10 @@ function BagFactory.CreateBag(): BasePart
 	selectionBox.LineThickness = 0.05
 	selectionBox.Color3 = Color3.fromRGB(255, 255, 0) -- Bright Yellow outline
 	selectionBox.Parent = newBag
+	
+	-- Click detector for interaction (Task 7.1)
+	local clickDetector = Instance.new("ClickDetector")
+	clickDetector.Parent = newBag
 
 	-- Random Material & Color
 	local materials = Constants.BAG_MATERIALS
