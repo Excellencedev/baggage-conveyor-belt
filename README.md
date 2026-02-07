@@ -42,3 +42,5 @@ Start the Rojo server to sync changes to Roblox Studio:
 ```bash
 rojo serve
 ```
+
+Detailed technical approach and design decisions can be found in the [Technical Memo](MEMO.md).
