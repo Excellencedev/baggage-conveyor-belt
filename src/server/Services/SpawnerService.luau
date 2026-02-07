@@ -11,6 +11,7 @@ local SpawnerService = {}
 
 -- State
 local currentInterval = Constants.DEFAULT_SPAWN_INTERVAL
+local MAX_BAGS = 500 -- Hard limit safeguard
 
 -- Reference to the bags folder
 local bagsFolder = Workspace:FindFirstChild("Bags")
@@ -38,7 +39,13 @@ function SpawnerService.Init()
 	task.spawn(function()
 		while true do
 			task.wait(currentInterval)
-			spawnBag()
+			
+			-- Safeguard: Don't spawn if there are too many bags (Task 8.2)
+			if #bagsFolder:GetChildren() < MAX_BAGS then
+				spawnBag()
+			else
+				warn("Spawner Service: Max bag limit reached (500). Skipping spawn.")
+			end
 		end
 	end)
 	print("Spawner Service: Initialized and spawning bags every " .. currentInterval .. " seconds.")
