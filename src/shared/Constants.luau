@@ -7,6 +7,10 @@ Constants.CONVEYOR_LENGTH = 100 -- Studs
 Constants.CONVEYOR_SPEED = 5    -- Studs per second
 Constants.DESPAWN_DISTANCE = Constants.CONVEYOR_LENGTH + 5
 
+-- Coordinate Points
+Constants.SPAWN_POSITION = Vector3.new(0, 2.5, 0) -- Slightly above the belt start
+Constants.DESPAWN_POSITION = Vector3.new(0, 2.5, Constants.CONVEYOR_LENGTH)
+
 -- Spawning
 Constants.DEFAULT_SPAWN_INTERVAL = 1.0 -- Seconds
 Constants.MIN_SPAWN_INTERVAL = 0.1
