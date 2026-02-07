@@ -1,0 +1,15 @@
+{
+    "className": "MeshPart",
+    "properties": {
+        "MeshId": "rbxassetid://129544287",
+        "Size": [
+            2,
+            2,
+            2
+        ],
+        "Anchored": true,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth"
+    }
+}
