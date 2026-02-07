@@ -1,4 +1,3 @@
--- SpawnerService.luau
 -- Authoritatively handles bag creation on the server
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

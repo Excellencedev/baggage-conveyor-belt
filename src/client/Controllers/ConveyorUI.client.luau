@@ -1,4 +1,3 @@
--- ConveyorUI.client.luau
 -- Creates and manages the control panel for the assigned player
 
 local Players = game:GetService("Players")

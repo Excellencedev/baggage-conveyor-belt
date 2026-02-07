@@ -1,4 +1,3 @@
--- BagFactory.luau
 -- Responsible for creating and configuring bag instances
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

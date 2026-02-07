@@ -1,4 +1,3 @@
--- ConveyorService.luau
 -- Handles the movement of bags along the conveyor belt
 
 local RunService = game:GetService("RunService")

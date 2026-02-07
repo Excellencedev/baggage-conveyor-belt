@@ -1,4 +1,3 @@
--- InteractionController.client.luau
 -- Handles client-side interactions with bags
 
 local Workspace = game:GetService("Workspace")

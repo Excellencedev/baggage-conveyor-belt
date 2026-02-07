@@ -1,4 +1,3 @@
--- UIController.server.luau
 -- Manages UI ownership and permission for the conveyor control panel
 
 local Players = game:GetService("Players")

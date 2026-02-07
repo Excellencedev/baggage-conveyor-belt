@@ -1,4 +1,3 @@
--- InteractionService.luau
 -- Handles server-side interactions with bags
 
 local Workspace = game:GetService("Workspace")

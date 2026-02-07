@@ -1,4 +1,3 @@
--- Main.server.luau
 -- Initializes all server-side services
 
 local Server = script.Parent
