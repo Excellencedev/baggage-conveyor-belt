@@ -1,4 +1,4 @@
--- SpawnerService.server.luau
+-- SpawnerService.luau
 -- Authoritatively handles bag creation on the server
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -7,6 +7,8 @@ local Workspace = game:GetService("Workspace")
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Constants = require(Shared:WaitForChild("Constants"))
 local BagFactory = require(Shared:WaitForChild("Modules"):WaitForChild("BagFactory"))
+
+local SpawnerService = {}
 
 -- State
 local currentInterval = Constants.DEFAULT_SPAWN_INTERVAL
@@ -26,26 +28,21 @@ local function spawnBag()
 	-- Ensure correct position and parenting
 	newBag.CFrame = CFrame.new(Constants.SPAWN_POSITION)
 	newBag.Parent = bagsFolder
-	
-	print("Bag successfully added to Workspace.Bags at " .. tostring(newBag.Position))
 end
 
--- Spawning Loop
-task.spawn(function()
-	while true do
-		task.wait(currentInterval)
-		spawnBag()
-	end
-end)
-
--- API
-local SpawnerService = {}
 function SpawnerService.SetInterval(newInterval: number)
 	currentInterval = math.clamp(newInterval, Constants.MIN_SPAWN_INTERVAL, Constants.MAX_SPAWN_INTERVAL)
+	print("Spawner Service: Interval updated to " .. currentInterval)
 end
 
-_G.SpawnerService = SpawnerService
-
-print("Spawner Service: Initialized and spawning bags.")
+function SpawnerService.Init()
+	task.spawn(function()
+		while true do
+			task.wait(currentInterval)
+			spawnBag()
+		end
+	end)
+	print("Spawner Service: Initialized and spawning bags every " .. currentInterval .. " seconds.")
+end
 
 return SpawnerService
